@@ -1,0 +1,8 @@
+package com.voterapp.main;
+
+public class Voter {
+private void min() {
+	// TODO Auto-generated method stub
+
+}
+}

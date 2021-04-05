@@ -1,0 +1,36 @@
+package com.coforge.thread;
+class User extends Thread {
+
+	 String name;
+	 double amount;
+	 double interest;
+	public User(String name, double amount) {
+		super();
+		this.name = name;
+		this.amount = amount;
+		Thread th1=new Thread(name);
+		th1.start();
+	}
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+	System.out.println("In run");
+	Bank bank=new Bank();
+	interest=bank.calculateInterest(name,amount);
+	System.out.println(interest);
+	
+	}
+	 
+	
+
+}
+public class DemoRun1{
+	public static void main(String[] args) {
+		System.out.println("In main");
+		Bank bank=new Bank();
+		User user1=new User("Rajat",11000);
+		User user2=new User("Rohan",13000);
+		User user3=new User("Raj",14000);
+		
+	}
+}

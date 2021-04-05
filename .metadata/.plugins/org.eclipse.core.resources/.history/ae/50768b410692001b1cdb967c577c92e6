@@ -1,0 +1,13 @@
+package com.coforge.utildemos;
+
+import java.util.ArrayList;
+
+public class ListDemo {
+public static void main(String[] args) {
+	ArrayList list=new ArrayList();
+	list.add("java");
+	list.add(10);
+	list.add('p');
+	System.out.println(list);
+}
+}

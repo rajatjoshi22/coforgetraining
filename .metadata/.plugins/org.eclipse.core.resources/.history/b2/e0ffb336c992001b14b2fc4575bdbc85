@@ -1,0 +1,7 @@
+package com.coforge.predefinedinter;
+
+import java.util.function.Supplier;
+
+public class Suppli implements Supplier<> {
+
+}

@@ -1,0 +1,31 @@
+package com.coforge.langdemos;
+import java.util.Scanner;
+public class StudentMain {
+public static void main(String[] args) {
+	Scanner src=new Scanner(System.in);
+	int mar1,mar2,mar3,mar4,mar5;
+	for(int count =0;count<3;count++) {
+	System.out.println("Enter name for Student:"+(count+1));
+	String name=src.next();
+	System.out.println("Enter city");
+	String city=src.next();
+	System.out.println("enter subject marks");
+	mar1=src.nextInt();
+	mar2=src.nextInt();
+	mar3=src.nextInt();
+	mar4=src.nextInt();
+	mar5=src.nextInt();
+	Student1 student=new Student1(name,city);
+	student.printDetails(
+			(int... marks)->{
+				int total=0;
+				for(int num:marks) {
+				total=total+num;
+			}
+			return (total)/marks.length;	
+		
+	}, mar1,mar2,mar3,mar4,mar5);
+	}
+	src.close();
+}
+}

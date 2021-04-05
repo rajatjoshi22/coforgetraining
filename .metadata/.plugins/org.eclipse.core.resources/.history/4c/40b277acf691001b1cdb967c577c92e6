@@ -1,0 +1,13 @@
+package com.voterapp.service;
+
+import com.voterapp.exception.InValidVoterException;
+
+public class ElectionBoothImpl implements ElectionBooth {
+
+	@Override
+	public boolean checkElegibility(int age, String locality, int vid) throws InValidVoterException {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

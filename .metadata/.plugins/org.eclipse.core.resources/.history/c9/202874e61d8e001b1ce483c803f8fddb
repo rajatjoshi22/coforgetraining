@@ -1,0 +1,45 @@
+package com.coforge.exception;
+public class Validation {
+	String[] names = new String[] { "rajat", "rohan", "virat", "rohit", "shreyas" };
+	String password;
+
+
+	boolean checkName(String name) throws NameExistsException {
+
+		try {
+			for (String nam : names)
+				if (name.equals(nam)) {
+					throw new NameExistsException("User already exists");
+
+				}
+		} catch (NameExistsException e) {
+			System.out.println(e.getMessage());
+			throw e;
+		}
+		return true;
+
+	}
+
+	boolean checkPassword(String password) throws TooLongException, TooShortException {
+
+		try {
+			if (password.length() > 13) {
+				throw new TooLongException("Password is too long |max limit 10");
+			} else if (password.length() < 5) {
+				throw new TooShortException("Password is too Short| min limit 8");
+
+			} else {
+
+				System.out.println("User Successfully register");
+			}
+		} catch (TooShortException e) {
+			System.out.println("Server side too short");
+			throw e;
+		} catch (TooLongException e) {
+			System.out.println("Server side too long");
+			throw e;
+		}
+		return true;
+
+	}
+}

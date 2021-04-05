@@ -1,0 +1,12 @@
+package com.coforge.thread;
+
+public class DemoThread {
+public static void main(String[] args) {
+	Thread t=Thread.currentThread();
+	System.out.println(t);
+	t.setName("DemoThread");
+	System.out.println(t);
+	int x=10/0;
+	System.out.println(x);
+}
+}

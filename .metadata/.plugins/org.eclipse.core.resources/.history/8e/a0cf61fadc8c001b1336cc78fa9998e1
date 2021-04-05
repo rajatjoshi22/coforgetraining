@@ -1,0 +1,5 @@
+package com.coforge.interface2;
+
+public interface Calculator {
+
+}

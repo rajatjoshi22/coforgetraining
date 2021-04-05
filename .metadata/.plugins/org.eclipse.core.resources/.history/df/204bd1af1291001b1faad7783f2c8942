@@ -1,0 +1,26 @@
+package com.coforge.thread;
+
+public class MainDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Thread th1 = new ChildThread();
+		th1.setName("thread-1");
+		th1.start();
+		Thread th2 = new ChildThread();
+		th2.setName("thread-2");
+		th2.start();
+
+		for (int i = 0; i < 5; i++) {
+			System.out.println(i + " *5= " + (i * 5));
+
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+
+		}
+	}
+
+}

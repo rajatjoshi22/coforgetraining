@@ -1,0 +1,7 @@
+package com.coforge.sort;
+
+import java.util.Comparator;
+
+public class PriceSort implements Comparator<T> {
+
+}

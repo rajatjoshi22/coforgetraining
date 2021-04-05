@@ -1,0 +1,36 @@
+package com.coforge.langdemos;
+
+public class Student implements Cloneable {
+String name,city;
+
+public Student(String name, String city) {
+	super();
+	this.name = name;
+	this.city = city;
+}
+
+@Override
+protected Object clone() throws CloneNotSupportedException {
+	// TODO Auto-generated method stub
+	return super.clone();
+}
+
+
+
+@Override
+public String toString() {
+	return "Student [name=" + name + ", city=" + city + "]";
+}
+
+public static void main(String[] args) {
+	Student student=new Student("Rajat","Delhi");
+	try {
+	Student student1=(Student)student.clone();
+	student1.name="Rohan";
+	student1.city="NewYork";
+	System.out.println(student1);
+	}catch(CloneNotSupportedException e) {
+		e.printStackTrace();
+	}
+}
+}

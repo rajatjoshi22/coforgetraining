@@ -1,0 +1,15 @@
+package com.coforge.thread;
+
+public class Bank {
+       double calculateInterest(double amount) {
+    	   double interest=0.0;
+    	   interest=amount*(3)/1000;
+    	   try{
+    	   Thread.sleep(1000);
+    	   }catch(InterruptedException e) {
+    		   e.printStackTrace();
+    	   }
+    	   
+    	   return interest;
+       }
+}

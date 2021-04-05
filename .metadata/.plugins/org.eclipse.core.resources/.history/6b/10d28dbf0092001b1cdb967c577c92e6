@@ -1,0 +1,52 @@
+package com.voterapp.service;
+
+import com.voterapp.exception.*;
+
+public class ElectionBoothImpl implements ElectionBooth {
+	String[] localities = new String[] { "Delhi", "Banglore", "Merrut", "Lucknow", "Noida" };
+	boolean condition;
+
+	@Override
+	public boolean checkElegibility(int age, String locality, int vid)
+			throws InValidVoterException, UnderAgeException, LocalityNotFoundException, NoVoterIdException {
+		// TODO Auto-generated method stub
+		condition = checkAge(age);
+		if (condition == false) {
+			throw new UnderAgeException("You are underage");
+		} else {
+			condition = checkLocality(locality);
+			if (condition == false) {
+				throw new LocalityNotFoundException("Your Locality not found");
+			} else {
+				condition = checkVoterId(vid);
+				if (condition == false) {
+					throw new NoVoterIdException("Invalid Voter Id");
+				}
+			}
+		}
+		return true;
+	}
+
+	private boolean checkAge(int age){
+		if (age < 18)
+			return false;
+		else
+			return true;
+	}
+
+	private boolean checkLocality(String locality) {
+		for (String val : localities)
+			if (val.equals(locality))
+				return true;
+		return false;
+
+	}
+
+	private boolean checkVoterId(int vid) {
+		if (vid >= 1000 && vid <= 9999)
+			return true;
+		else
+			return false;
+	}
+
+}

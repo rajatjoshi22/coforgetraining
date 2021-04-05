@@ -1,0 +1,69 @@
+package com.coforge.inher;
+import java.util.Scanner;
+public class AtmMain {
+public static void main(String[] args) {
+	double balance;
+	String condition=null;
+	Scanner src=new Scanner(System.in);
+	while(condition!="exit") {
+	System.out.println("Enter account type");
+	String accounttype=src.next();
+	String choice;
+	int withdraw,deposit;
+	switch(accounttype)
+	{
+	case "Savings":
+		BankAccount savings=new Savings(500000);
+		System.out.println("select withdraw | deposit | getbalance ");
+		choice=src.next();
+		if(choice.equals("withdraw"))
+		{
+			System.out.println("Enter amount to withdraw");
+			withdraw=src.nextInt();
+			savings.withdraw(withdraw);
+		}
+		else if(choice.equals("deposit"))
+		{
+			System.out.println("Enter amount to deposit");
+			deposit=src.nextInt();
+			savings.withdraw(deposit);
+		}
+		else {
+			balance=savings.getBalance();
+			System.out.println("Your account balance is :"+balance);
+		}
+	
+	    break;
+	case "Current":
+		BankAccount current=new Current(50000);
+		System.out.println("select withdraw | deposit | getbalance ");
+		choice=src.next();
+		if(choice.equals("withdraw"))
+		{
+			System.out.println("Enter amount to withdraw");
+			withdraw=src.nextInt();
+			current.withdraw(withdraw);
+		}
+		else if(choice.equals("deposit"))
+		{
+			System.out.println("Enter amount to deposit");
+			deposit=src.nextInt();
+			current.withdraw(deposit);
+		}
+		else {
+			balance=current.getBalance();
+			System.out.println("Your account balance is :"+balance);
+		}
+	
+	    break;
+		
+	default: 
+		System.out.println("Wrong selection");
+	
+	}
+	System.out.println("Do you Want to Continue or exit");
+	condition=src.next();
+	src.close();
+	}
+}
+}

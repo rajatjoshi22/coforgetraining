@@ -1,0 +1,8 @@
+package com.coforge.predefinedinter;
+
+public class Trial {
+public static void main(String[] args) {
+	Check c = new Check();
+	c.accept("rajat");
+}
+}

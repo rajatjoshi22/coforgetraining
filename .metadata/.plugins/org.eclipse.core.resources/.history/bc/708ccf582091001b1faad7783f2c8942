@@ -1,0 +1,12 @@
+package com.coforge.lamdademo;
+
+public class GreetMain {
+public static void main(String[] args) {
+	Greeter greet=(message)->{
+		System.out.println(message);
+	};
+	greet.greetMessage("Have a good day");
+	greet.greetMessage("Welcome to threads");
+	greet.greetMessage("good bye");
+}
+}

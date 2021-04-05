@@ -1,0 +1,5 @@
+package com.voterapp.main;
+
+public class Voter {
+
+}

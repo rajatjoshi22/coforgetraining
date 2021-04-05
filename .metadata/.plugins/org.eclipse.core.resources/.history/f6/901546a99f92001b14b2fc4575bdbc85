@@ -1,0 +1,25 @@
+package com.coforge.sort;
+
+import java.util.ArrayList;
+
+public class CompareDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+   ArrayList<Mobile> mobilelist=new ArrayList<>();
+   Mobile mobile=new Mobile("s2","samsung",12000.0);
+   mobilelist.add(mobile);
+   mobile=new Mobile("iphone4","Apple",22000.0);
+   mobilelist.add(mobile);
+   mobile=new Mobile("pixel","google",24000.0);
+   mobilelist.add(mobile);
+   mobile=new Mobile("berry1","blackberry",21000.0);
+   mobilelist.add(mobile);
+   mobile=new Mobile("y20","vivo",23000.0);
+   mobilelist.add(mobile);
+   for(Mobile mobile1:mobilelist)
+	   System.out.println(mobile1);
+	   
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.coforge.thread;
+
+public class RunThread implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		Bank bank=new Bank();
+		double interest=bank.calculateInterest(80000);
+		System.out.println(interest);
+	}
+
+}

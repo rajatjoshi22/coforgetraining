@@ -1,0 +1,46 @@
+package com.bookapp.service;
+
+import java.util.ArrayList;
+
+
+import com.bookapp.exceptions.BookNotFoundException;
+import com.bookapp.model.Book;
+
+public class BookServiceImpl implements BookService {
+	ArrayList<Book> bookList = new ArrayList<>();  
+	ArrayList<Book> authorBookList=new ArrayList<>();
+	ArrayList<Book> idBookList=new ArrayList<>();
+	@Override
+	public void addBook(Book book) {
+		// TODO Auto-generated method stub
+		bookList.add(book);
+
+	}
+
+	@Override
+	public ArrayList<Book> getBookByAuthor(String author) throws BookNotFoundException {
+		// TODO Auto-generated method stub
+	   for(Book book:bookList) {
+		   if((book.getAuthor()).equals(author)) {
+			   authorBookList.add(book);
+		   }
+	   }
+	   if(authorBookList.isEmpty()) {
+		   throw new BookNotFoundException("No Books Found");
+	   }
+	   
+	   
+	return authorBookList;
+	
+	}
+
+	@Override
+	public Book getbyId(int bookid) throws BookNotFoundException {
+		// TODO Auto-generated method stub
+		 for(Book book:bookList) {
+			   if((book.getBookid())==bookid) {
+				   idBookList.add(book);
+			   }
+		   }
+	}
+}

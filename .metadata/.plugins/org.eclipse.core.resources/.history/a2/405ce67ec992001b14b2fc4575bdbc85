@@ -1,0 +1,10 @@
+package com.coforge.predefinedinter;
+
+import java.util.function.Consumer;
+
+public class Trial {
+public static void main(String[] args) {
+	Consumer<String> consumer = (String t)->System.out.println(t.toUpperCase());
+	consumer.accept("rajat");
+}
+}

@@ -1,0 +1,14 @@
+package com.coforge.interface2;
+
+public class CalculatorMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Calculator cal = new BasicCalculator();
+		cal.add(15, 20);
+		cal.difference(25, 20);
+		cal.product(15, 3);
+		cal.divide(10, 5);
+	}
+
+}

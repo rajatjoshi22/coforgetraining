@@ -1,0 +1,33 @@
+package com.bookapp.client;
+import java.util.ArrayList;
+import java.util.Scanner;
+import com.bookapp.service.*;
+import com.bookapp.model.Book;
+public class BookMain {
+public static void main(String[] args) {
+	
+	BookService bookserve=new BookServiceImpl();
+	try(Scanner src=new Scanner(System.in);) {
+	for(int counter=0;counter<5;counter++) {
+		System.out.println("Enter book title ");
+		String title=src.next();
+		System.out.println("Enter Author name");
+		String author=src.next();
+		System.out.println("Enter Book id");
+		int bookid=src.nextInt();
+		System.out.println("Enter Book Category");
+		String category=src.next();
+		Book book=new Book(title,author,bookid,category);
+		bookserve.addBook(book);
+	}
+	System.out.println("Enter the author to search books");
+	String author=src.next();
+	ArrayList<Book> returnBookList=bookserve.getBookByAuthor(author);
+	for(Book book:returnBookList)
+		System.out.println(book);
+	}catch(Exception e) {
+		System.out.println(e.getMessage());
+		e.printStackTrace();
+	}
+}
+}

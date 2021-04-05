@@ -1,0 +1,11 @@
+package com.coforge.langdemos;
+
+public class StudentDetailsImpl implements StudentDetails {
+
+	@Override
+	public double getAverage(int... marks) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

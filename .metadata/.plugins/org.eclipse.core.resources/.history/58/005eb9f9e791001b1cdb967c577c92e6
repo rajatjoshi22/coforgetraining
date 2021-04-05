@@ -1,0 +1,11 @@
+package com.coforge.serial;
+
+public class SerialStud {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+     Student student=new Student("Rajat",12345,"cricket");
+     System.out.println(student);
+	}
+
+}

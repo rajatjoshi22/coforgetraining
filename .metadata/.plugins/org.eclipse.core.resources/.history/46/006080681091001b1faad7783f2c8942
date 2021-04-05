@@ -1,0 +1,5 @@
+package com.coforge.thread;
+
+public class ChildThread extends Thread {
+
+}

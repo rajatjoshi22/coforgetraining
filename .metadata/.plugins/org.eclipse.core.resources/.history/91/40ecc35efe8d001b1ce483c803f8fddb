@@ -1,0 +1,21 @@
+package com.coforge.interfac;
+
+public class Validation {
+String[] names=new String[] {"rajat","rohan","prashant","rahul","virat"};
+boolean result;
+public boolean checkUsername(String name) {
+	for(String nam:names) {
+		if(name.equals(nam)) { 
+			result=true;
+		}
+		else {
+			result= false;
+		}
+	}
+	if(result)
+		return true;
+	else
+		return false;
+	
+}
+}

@@ -1,0 +1,21 @@
+package com.coforge.excep;
+
+public class Bankrun {
+public static void main(String[] args) {
+	System.out.println("Welcome");
+//	try {
+	String value=args[0];
+	System.out.println("value :"+value);
+	int num=Integer.parseInt(value);
+	System.out.println(num);
+	Bank bank=new Bank();
+	bank.withdraw(num);
+	System.out.println("Amount Withdraw");
+//	}
+//	catch(Exception e) {
+//		System.out.println("Please try again");
+//	}
+	System.out.println("Good bye");
+	
+}
+}
